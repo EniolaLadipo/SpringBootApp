@@ -1,13 +1,19 @@
 package com.example.blog.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class LoginContoller {
     
-    @GetMapping("/hello")
-    public String hello(){
-        return "Hello world";
+    @GetMapping("/")
+    public String start(){
+        return "home";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
 }
