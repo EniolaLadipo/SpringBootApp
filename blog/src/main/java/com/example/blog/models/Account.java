@@ -4,9 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class Account {
+public class Account implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +21,15 @@ public class Account {
 
     //Getters
 
+    public Long getId(){
+        return id;
+    }
+
     public String getFirstName(){
         return firstname;
     }
 
-    public String getLasttName(){
+    public String getLastName(){
         return lastname;
     }
 

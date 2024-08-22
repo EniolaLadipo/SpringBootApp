@@ -12,15 +12,7 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-    public Account createAccount(String firstname, String lastname, String username, String email, String password){
-        Account account = new Account();
-
-        account.setFirstName(firstname);
-        account.setLastName(lastname);
-        account.setEmail(email);
-        account.setUserName(username);
-        account.setPassword(password);
-
+    public Account registerAccount(Account account){
         return accountRepository.save(account);
     }
 }
