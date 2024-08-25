@@ -34,7 +34,7 @@ public class RegisterController {
         session.setAttribute("account", account);
 
         //Directs to success endpoint
-        return "redirect:/success";
+        return "redirect:/posts";
     }
 
     //Success endpoint

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Posts Page</title>
+</head>
+<body>
+    <div th:if="${posts.isEmpty()}">
+        <p>No posts available</p>
+    </div>
+
+    <div class="posts-container" th:unless="${posts.isEmpty()}">
+        <ul>
+            <li th:each="post : ${posts}">
+                <h2 th:text="${post.title}"></h2>
+                <p th:text="${post.body}"></p>
+                <p><strong>Created by: </strong> <span th:text="${post.creator}"></span></p>
+                <p><strong>Posted on: </strong> <span th:text="${post.formattedDate}"></span></p>
+                <hr>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <form action="#" th:action="@{/post/create}" method="get">
+            <button type="submit">Create post</button>
+        </form>
+    </div>
+</body>
+</html>

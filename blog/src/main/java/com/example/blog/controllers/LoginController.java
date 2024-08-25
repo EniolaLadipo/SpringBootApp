@@ -31,7 +31,7 @@ public class LoginController {
             Account currentAccount = accountOptional.get();
             session.setAttribute("account", currentAccount);
 
-            return "redirect:/successLogin";
+            return "redirect:/posts";
 
         } else {
             model.addAttribute("errorMessage", "Invalid username or password, please try again");
