@@ -7,8 +7,13 @@
 </head>
 <body>
     <h1>Welcome to the application</h1>
+    <br>
+    <form action="#" th:action="@{/registration}" method="get">
+        <button type="submit">Click me to register</button>
+    </form>
+    <br>
     <form action="#" th:action="@{/login}" method="get">
-        <button type="submit">Click me!</button>
+        <button type="submit">Click me to login</button>
     </form>
 </body>
 </html>

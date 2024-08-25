@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Registration</title>
+</head>
+<body>
+    <h1>Congrats, you successfully logged into your account</h1>
+    <p>Your details are...</p>
+    <ul>
+        
+        <li th:text="${account.firstName}"></li>
+        <li th:text="${account.lastName}"></li>
+        <li th:text="${account.email}"></li>
+        <li th:text="${account.userName}"></li>
+        <li th:text="${account.password}"></li>
+
+    </ul>
+    <form action="#" th:action="@{/logout}" method="get">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

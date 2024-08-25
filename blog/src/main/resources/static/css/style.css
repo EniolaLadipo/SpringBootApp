@@ -1,0 +1,15 @@
+.registrationForm , .loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form items vertically */
+    gap: 15px;              /* Space between form items */
+    width: 100%;            /* Full width of container */
+    max-width: 500px;       /* Max width of form */
+    align-items: flex-start; /* Align form items to the left */
+}

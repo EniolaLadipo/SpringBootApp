@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success</title>
+    <title>Successful Registration</title>
 </head>
 <body>
     <h1>Congrats, you successfully created an account</h1>
@@ -17,5 +17,10 @@
         <li th:text="${account.password}"></li>
 
     </ul>
+
+    <form action="#" th:action="@{/logout}" method="get">
+        <button type="submit">Logout</button>
+    </form>
+
 </body>
 </html>

@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-
     <title>Login Page</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
-    <div th:if="${errorMessage}" style="color:red">
-        <p th:text="${errorMessage}"></p>
-    </div>
-    
-    <div class="loginForm">
-        <form action="#" th:object="${account}" th:action="@{/login}" method="post">
+    <div class="registerForm">
+        <form action="#" th:object="${account}" th:action="@{/register}" method="post">
+
+            <label for="firstname">Firstname</label>
+            <input type="text" placeholder="Enter your firstname" th:field="*{firstName}" required>
+
+            <label for="lastname">Lastname</label>
+            <input type="text" placeholder="Enter your lastname" th:field="*{lastName}" required>
+
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter your email address" th:field="*{email}" required>
 
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Enter your username" th:field="*{userName}" required>
@@ -26,6 +31,5 @@
 
         </form>
     </div>
-
 </body>
 </html>
