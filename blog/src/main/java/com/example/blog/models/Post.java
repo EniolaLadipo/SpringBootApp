@@ -23,6 +23,8 @@ public class Post {
     private String creator;
     private LocalDateTime timeCreated;
 
+
+    //Holds the user-friendly format of the date which will be updated in the PostController
     private String formattedDate;
 
     //Getters

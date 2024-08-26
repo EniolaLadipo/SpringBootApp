@@ -18,6 +18,7 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
+    //Used in the LoginController, only username and password are required to authenticate user
     public Optional<Account> findAccount(String username, String password){
         return accountRepository.findByUsernameAndPassword(username, password);
     }

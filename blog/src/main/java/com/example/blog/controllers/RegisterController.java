@@ -17,13 +17,14 @@ public class RegisterController {
     @Autowired
     private AccountService accountService;
 
+    //Sends user the registration page where they can enter their credentials
     @GetMapping("/registration")
     public String showLogin(Model model){
         model.addAttribute("account", new Account());
         return "registration";
     }
 
-    //Registration endpoint
+    //Receives user data from the registration page
     @PostMapping("/register")
     public String showRegister(Account account, HttpSession session){
 
@@ -33,11 +34,11 @@ public class RegisterController {
         //Adding account object to session store
         session.setAttribute("account", account);
 
-        //Directs to success endpoint
+        //Sends user to the posts page
         return "redirect:/posts";
     }
 
-    //Success endpoint
+    //Tester function - shows that user data was successfully added to the session
     @GetMapping("/success")
     public String showSuccessPage(Model model, HttpSession session){
         
