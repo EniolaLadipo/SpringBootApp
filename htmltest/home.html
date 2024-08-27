@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
 </head>
 <body>
     <div class="home-container">
-        
+
         <h1>Welcome to the application</h1>
 
         <form action="#" th:action="@{/login}" method="get">
-            <button type="submit">Click me to login</button>
+            <button type="submit">Login</button>
         </form>
 
         <form action="#" th:action="@{/registration}" method="get">
-            <button type="submit">Click me to register</button>
+            <button type="submit">Register</button>
         </form>
 
     </div>
