@@ -12,19 +12,30 @@
         <p>No posts available</p>
     </div>
 
+    <div class="posts-forms">
+        <form action="#" th:action="@{/post/create}" method="get">
+            <button type="submit">Create post</button>
+        </form>
+
+        <form action="#" th:action="@{/logout}" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    
+    <hr>
+
+    <div class="searchbar">
+        <input type="text" placeholder="Enter something">
+        <button type="submit">Search</button>
+    </div>
+
     <div class="posts-container" th:unless="${posts.isEmpty()}">
         <div th:each="post : ${posts}" class="post-block">
             <h2 th:text="${post.title}"></h2>
             <p th:text="${post.body}"></p>
-            <p><strong>Created by: </strong> <span th:text="${post.creator}"></span></p>
-            <p><strong>Posted on: </strong> <span th:text="${post.formattedDate}"></span></p>
+            <p class="info"><strong>Created by: </strong> <span th:text="${post.creator}"></span></p>
+            <p class="info"><strong>Posted on: </strong> <span th:text="${post.formattedDate}"></span></p>
         </div>
-    </div>
-    <hr>
-    <div>
-        <form action="#" th:action="@{/post/create}" method="get">
-            <button type="submit">Create post</button>
-        </form>
     </div>
 </body>
 </html>

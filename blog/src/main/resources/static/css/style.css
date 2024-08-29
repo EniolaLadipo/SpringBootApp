@@ -233,3 +233,46 @@ body {
     font-size: 2em;
     font-weight: bold;
 }
+
+.posts-forms form {
+    display: inline;
+}
+
+.posts-forms button{
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input{
+    padding: 8px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    width: 300px;
+    border: 1px solid #ccc;
+
+}
+
+.searchbar button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}

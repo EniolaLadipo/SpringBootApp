@@ -6,7 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Post {
@@ -22,6 +24,10 @@ public class Post {
     
     private String creator;
     private LocalDateTime timeCreated;
+
+    @ManyToOne()
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
 
 
     //Holds the user-friendly format of the date which will be updated in the PostController
@@ -53,6 +59,9 @@ public class Post {
         return formattedDate;
     }
 
+    public Account getAccountId(){
+        return account;
+    }
 
     //Setters
 
@@ -74,5 +83,9 @@ public class Post {
 
     public void setFormattedDate(String formattedDate){
         this.formattedDate = formattedDate;
+    }
+
+    public void setAccountId(Account account){
+        this.account = account;
     }
 }

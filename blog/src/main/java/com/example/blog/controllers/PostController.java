@@ -27,14 +27,6 @@ public class PostController {
     public String showPosts(Model model){
         List<Post> posts = postService.getAllPosts();
 
-        //Changes the format of the date to look more user-friendly, eg. 5:38pm, 12/07/2024
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mma, dd/MM/yyyy");
-
-        //Set the new formatted date for each post
-        for(Post post: posts){
-            post.setFormattedDate(post.getTimeCreated().format(formatter));
-        }
-
         model.addAttribute("posts", posts);
         return "posts";
     }
@@ -59,6 +51,12 @@ public class PostController {
 
         //Takes the current date and time
         post.setTimeCreated(LocalDateTime.now());
+
+        //Formats date in a more user-friendly format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mma, dd/MM/yyyy");
+        post.setFormattedDate(post.getTimeCreated().format(formatter));
+
+        post.setAccountId(currentAccount);
 
         //Post is saved to the database
         postService.createPost(post);
