@@ -12,17 +12,13 @@
         <p>No posts available</p>
     </div>
 
-    <div class="posts-forms">
-        <form action="#" th:action="@{/post/create}" method="get">
-            <button type="submit">Create post</button>
-        </form>
+    <div class="posts-links">
+        <a th:href="@{/post/create}">Create post</a>
 
-        <form action="#" th:action="@{/logout}" method="get">
-            <button type="submit">Logout</button>
-        </form>
+        <a th:href="@{/profile}">Profile</a>
+
+        <a th:href="@{/logout}">Logout</a>
     </div>
-    
-    <hr>
 
     <div class="searchbar">
         <input type="text" placeholder="Enter something">
